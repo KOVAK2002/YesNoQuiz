@@ -47,12 +47,9 @@ Da biste mijenjali pitanja unaprijed i unatrag, koristite tipke "Sljedeće pitan
 
 ## Licenca
 
-Ova aplikacija je dostupna pod [MIT licencom](LICENSE). Slobodno je koristiti, prilagoditi i distribuirati prema svojim potrebama.
 
----
+Autor: Borna  
 
-Autor: [Vaše ime]
+E-pošta: bornakovačević5@gmail.com
 
-E-pošta: [Vaša e-pošta]
-
-GitHub: [Poveznica na GitHub repozitorij aplikacije]
+GitHub: 
