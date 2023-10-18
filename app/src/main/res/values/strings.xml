@@ -1,0 +1,11 @@
+
+<resources>
+<string name="app_name">Kviz2</string>
+<string name="question_1">Koliko je 2 + 2?</string>
+<string name="answer_1">4</string>
+<string name="question_2">Koji je glavni grad Francuske?</string>
+<string name="answer_2">Pariz</string>
+<!-- Dodajte ostala pitanja i odgovore ovdje -->
+<string name="correct_message">Točan odgovor!</string>
+<string name="incorrect_message">Netočan odgovor!</string>
+</resources>
