@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         // Dodajte ostala pitanja i odgovore ovdje
     )
     private var currentQuestionIndex = 0
-
+    private lateinit var quizViewModel: QuizViewModel
     private lateinit var questionTextView: TextView
     private lateinit var answerEditText: EditText
     private lateinit var checkAnswerButton: Button
@@ -27,6 +28,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        quizViewModel = ViewModelProvider(this).get(QuizViewModel::class.java)
+
 
         questionTextView = findViewById(R.id.questionTextView)
         answerEditText = findViewById(R.id.answerEditText)
@@ -80,10 +84,17 @@ class MainActivity : AppCompatActivity() {
         Log.d("MainActivity", "Aplikacija ne postoji")
     }
 
+
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putInt("currentQuestionIndex", currentQuestionIndex)
+        outState.putInt("currentQuestionIndex", quizViewModel.currentQuestionIndex)
     }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        quizViewModel.currentQuestionIndex = savedInstanceState.getInt("currentQuestionIndex", 0)
+    }
+
 
     private fun checkAnswer() {
         val userAnswer = answerEditText.text.toString()
